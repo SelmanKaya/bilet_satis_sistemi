@@ -7,7 +7,6 @@ import { ref, onMounted } from 'vue';
 
 export default {
   setup(props, { params }) {
-    // Kullanıcı bilgilerini ref ile tanımla
     const data = ref({
         walpaper: '',
         title: '',
@@ -15,15 +14,12 @@ export default {
         makers: '',
     });
 
-    // Sayfa yüklendiğinde çalışacak olan fonksiyon
     onMounted(() => {
-      // Kullanıcı bilgilerini $route.params yerine params üzerinden al
       console.log(params)
       data.value = params.data;
       console.log('Movie Infos:', data.value);
     });
 
-    // userInfo'yi dışa aktar
     return {
       data,
     };
@@ -34,7 +30,6 @@ export default {
 
 
 
-<!-- <script setup>
 // import movies from "../components/movies.vue"
 import { useRoute } from 'vue-router';
 import { defineProps, reactive } from "vue";
