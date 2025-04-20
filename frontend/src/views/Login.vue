@@ -68,7 +68,6 @@ import axios from "axios";
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-// import server from '..../backend/server.js'
 
 import "../assets/style.css";
 
@@ -98,9 +97,8 @@ const registerUser = async () => {
       sifre: password.value,
     });
 
-    console.log(response.data); // Başarılı yanıtı konsola yazdırabilirsiniz.
+    console.log(response.data); 
 
-    // İsteğe bağlı: Kullanıcıyı başka bir sayfaya yönlendirme, vb.
   } catch (error) {
     console.error("Hata:", error);
   }
@@ -115,12 +113,11 @@ const signIn = async () => {
       sifre: sifre.value,
     });
 
-    console.log(response.data); // Başarılı yanıtı konsola yazdırabilirsiniz.
+    console.log(response.data); 
     if(response.data === 'Success') {
       router.push('/')
     }
 
-    // İsteğe bağlı: Kullanıcıyı başka bir sayfaya yönlendirme, vb.
   } catch (error) {
     console.error("Hata:", error);
   }
